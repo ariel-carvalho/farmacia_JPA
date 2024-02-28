@@ -19,15 +19,15 @@ public class ProdutoDAO
         this.em.persist(produto);
     }
 
+    public Produto buscarPorId(int id)
+    {
+        return em.find(Produto.class, id);
+    }
+
     public List<Produto> buscarTodos()
     {
         String jpql = "SELECT produtos FROM Produto produtos";
         return em.createQuery(jpql, Produto.class).getResultList();
-    }
-
-    public Produto buscarPorId(int id)
-    {
-        return em.find(Produto.class, id);
     }
 
     public void editar(Produto produto)
@@ -40,6 +40,4 @@ public class ProdutoDAO
         produto = em.merge(produto);
         this.em.remove(produto);
     }
-
-
 }

@@ -13,7 +13,6 @@ public class Cadastrar
 {
     public static void main(String[] args)
     {
-
         EntityManager em = JPAUtil.getEntityManager();
 
         FabricanteDAO fabricanteDAO = new FabricanteDAO(em);
@@ -43,7 +42,5 @@ public class Cadastrar
 
         em.getTransaction().commit();
         em.close();
-
-
     }
 }
