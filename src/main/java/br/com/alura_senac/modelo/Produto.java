@@ -15,6 +15,8 @@ import javax.persistence.*;
     @ManyToOne
     private Fabricante fabricante;
 
+    public Produto(){}
+
     public Produto(String nome, String descricao, double preco, Fabricante fabricante)
     {
         this.nome = nome;
@@ -46,5 +48,11 @@ import javax.persistence.*;
     public Fabricante getFabricante()
     {
         return fabricante;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Nome: " + this.nome + "| Descrição: "+ this.descricao + "| Preço: R$ " + this.preco;
     }
 }

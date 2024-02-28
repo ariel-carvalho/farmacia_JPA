@@ -3,6 +3,7 @@ package br.com.alura_senac.dao;
 import br.com.alura_senac.modelo.Produto;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 public class ProdutoDAO
 {
@@ -17,4 +18,11 @@ public class ProdutoDAO
     {
         this.em.persist(produto);
     }
+
+    public List<Produto> buscarTodos()
+    {
+        String jpql = "SELECT produto FROM Produto produto";
+        return em.createQuery(jpql, Produto.class).getResultList();
+    }
+
 }

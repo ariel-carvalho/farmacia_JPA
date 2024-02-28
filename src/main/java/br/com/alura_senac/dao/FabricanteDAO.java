@@ -1,7 +1,10 @@
 package br.com.alura_senac.dao;
 
 import br.com.alura_senac.modelo.Fabricante;
+import br.com.alura_senac.modelo.Produto;
+
 import javax.persistence.EntityManager;
+import java.util.List;
 
 public class FabricanteDAO
 {

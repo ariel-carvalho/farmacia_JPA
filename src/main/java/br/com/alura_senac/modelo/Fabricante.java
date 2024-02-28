@@ -11,6 +11,8 @@ public class Fabricante
     private int id;
     private String nome;
 
+    public Fabricante(){}
+
     public Fabricante(String nome)
     {
         this.nome = nome;
@@ -24,6 +26,12 @@ public class Fabricante
     public String getNome()
     {
         return nome;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "| Fabricante: " + this.nome;
     }
 }
 
