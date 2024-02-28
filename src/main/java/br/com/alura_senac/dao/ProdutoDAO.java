@@ -34,4 +34,11 @@ public class ProdutoDAO
     {
         this.em.merge(produto);
     }
+
+    public void deletar(Produto produto)
+    {
+        this.em.merge(produto);
+    }
+
+
 }

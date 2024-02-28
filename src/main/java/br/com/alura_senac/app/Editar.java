@@ -16,10 +16,14 @@ public class Editar
 
         em.getTransaction().begin();
 
+        produtoDAO.editar(produtoDAO.buscarPorId(1));
         Produto produto = produtoDAO.buscarPorId(1);
+        em.persist(produto);
         produto.setDescricao("Nova Descrição");
 
-        System.out.println("Nome: " + produto.getNome() + "| Descrição: "
-                + produto.getDescricao() + "| Preço: R$ " + produto.getPreco() + produto.getFabricante());
+        em.getTransaction().commit();
+        em.close();
+
+        System.out.println("Descrição alterada com Sucesso");
     }
 }
