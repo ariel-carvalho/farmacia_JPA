@@ -37,7 +37,8 @@ public class ProdutoDAO
 
     public void deletar(Produto produto)
     {
-        this.em.merge(produto);
+        produto = em.merge(produto);
+        this.em.remove(produto);
     }
 
 
