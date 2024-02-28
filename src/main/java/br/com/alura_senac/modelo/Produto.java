@@ -4,10 +4,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "produtos")
- class Produto
+ public class Produto
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
     private String descricao;

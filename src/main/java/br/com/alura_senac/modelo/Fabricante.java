@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Fabricante
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
 
