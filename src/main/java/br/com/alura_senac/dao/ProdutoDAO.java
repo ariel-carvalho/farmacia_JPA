@@ -21,8 +21,17 @@ public class ProdutoDAO
 
     public List<Produto> buscarTodos()
     {
-        String jpql = "SELECT produto FROM Produto produto";
+        String jpql = "SELECT produtos FROM Produto produtos";
         return em.createQuery(jpql, Produto.class).getResultList();
     }
 
+    public Produto buscarPorId(int id)
+    {
+        return em.find(Produto.class, id);
+    }
+
+    public void editar(Produto produto)
+    {
+        this.em.merge(produto);
+    }
 }

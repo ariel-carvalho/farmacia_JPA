@@ -5,9 +5,8 @@ import br.com.alura_senac.modelo.Produto;
 import br.com.alura_senac.util.JPAUtil;
 
 import javax.persistence.EntityManager;
-import java.util.List;
 
-public class Listar
+public class Editar
 {
     public static void main(String[] args)
     {
@@ -15,11 +14,11 @@ public class Listar
 
         ProdutoDAO produtoDAO = new ProdutoDAO(em);
 
-        List<Produto> todos = produtoDAO.buscarTodos();
-        todos.forEach(produto -> System.out.println("Nome: " + produto.getNome() + "| Descrição: "
-                + produto.getDescricao() + "| Preço: R$ " + produto.getPreco() + produto.getFabricante()));
+        em.getTransaction().begin();
 
         Produto produto = produtoDAO.buscarPorId(1);
+        produto.setDescricao("Nova Descrição");
+
         System.out.println("Nome: " + produto.getNome() + "| Descrição: "
                 + produto.getDescricao() + "| Preço: R$ " + produto.getPreco() + produto.getFabricante());
     }
