@@ -1,11 +1,18 @@
 package br.com.alura_senac.modelo;
 
-public class Produto
+import javax.persistence.*;
+
+@Entity
+@Table(name = "produtos")
+ class Produto
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String nome;
     private String descricao;
     private double preco;
+    @ManyToOne
     private Fabricante fabricante;
 
     public Produto(String nome, String descricao, double preco, Fabricante fabricante)
