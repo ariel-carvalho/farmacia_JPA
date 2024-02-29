@@ -12,7 +12,7 @@ import javax.persistence.*;
     private String nome;
     private String descricao;
     private double preco;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Fabricante fabricante;
     private boolean ativo =true;
 

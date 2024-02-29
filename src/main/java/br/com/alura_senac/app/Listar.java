@@ -15,12 +15,12 @@ public class Listar
 
         ProdutoDAO produtoDAO = new ProdutoDAO(em);
 
-        List<Produto> todos = produtoDAO.buscarTodos();
+        List<Produto> todos = produtoDAO.buscarTodosLazy();
         todos.forEach(produto -> System.out.println("Nome: " + produto.getNome() + "| Descrição: "
                 + produto.getDescricao() + "| Preço: R$ " + produto.getPreco() + produto.getFabricante()));
 
-        Produto produto = produtoDAO.buscarPorId(1);
-        System.out.println("Nome: " + produto.getNome() + "| Descrição: "
-                + produto.getDescricao() + "| Preço: R$ " + produto.getPreco() + produto.getFabricante());
+//        Produto produto = produtoDAO.buscarPorId(5);
+//        System.out.println("Nome: " + produto.getNome() + "| Descrição: "
+//                + produto.getDescricao() + "| Preço: R$ " + produto.getPreco() + produto.getFabricante());
     }
 }

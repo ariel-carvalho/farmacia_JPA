@@ -40,4 +40,10 @@ public class ProdutoDAO
         produto = em.merge(produto);
         this.em.remove(produto);
     }
+
+    public List<Produto> buscarTodosLazy()
+    {
+        String jpql = "SELECT produtos FROM Produto produtos JOIN FETCH produtos.fabricante";
+        return em.createQuery(jpql, Produto.class).getResultList();
+    }
 }
