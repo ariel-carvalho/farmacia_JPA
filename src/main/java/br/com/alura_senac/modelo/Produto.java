@@ -14,6 +14,7 @@ import javax.persistence.*;
     private double preco;
     @ManyToOne
     private Fabricante fabricante;
+    private boolean ativo =true;
 
     public Produto(){}
 
@@ -66,9 +67,13 @@ import javax.persistence.*;
         this.fabricante = fabricante;
     }
 
-    @Override
-    public String toString()
+    public boolean isAtivo()
     {
-        return "Nome: " + this.nome + "| Descrição: "+ this.descricao + "| Preço: R$ " + this.preco;
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo)
+    {
+        this.ativo = ativo;
     }
 }
